@@ -1,6 +1,16 @@
 "use strict";
 
-const numberofFilms = +prompt("Сколько фильмов вы уже посмотрели: ", "");
+let numberofFilms;
+
+
+function start() {
+    numberofFilms = +prompt("Сколько фильмов вы уже посмотрели: ", "");
+    while (numberofFilms == "" || numberofFilms == null || isNaN(numberofFilms)) {
+        numberofFilms = +prompt("Сколько фильмов вы уже посмотрели: ", "");
+    }
+}
+
+start();
 
 const personalMovieDB = {
     count: 2,
@@ -38,5 +48,3 @@ if (personalMovieDB.count <= 10) {
 
 
 console.log(personalMovieDB);
-    
- 
